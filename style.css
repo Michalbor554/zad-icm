@@ -33,30 +33,44 @@ a {
     background-color: #202020;
     width: 100%;
     height: 110px;
-    padding: 0 20px;
+    padding: 0 2%;
     margin: 0;
+    position: relative;
 }
 .logoPng {
-    width: auto;
     height: 100px;
+    width: auto;
+    max-width: 100%;
+}
+
+#logo {
+    position: absolute;
+    left: 2%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .menu-center
 {
     display: flex;
     align-items: center;
-    gap: 120px;
-    margin-left: 450px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 200px; /* Przestrzeń dla logo */
+    gap: 5%;
 }
 .icons-right
 {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .icon1
 {
-    margin-right: 120px;
+    margin-right: 0;
 }
 .dropdown-menu
 {
@@ -119,7 +133,8 @@ a {
 #searchbar {
     display: flex;
     align-items: center;
-    width: 520px;
+    width: 100%;
+    max-width: 520px;
     height: 44px;
     background-color: #d4d3bd;
     border-radius: 32px;
@@ -709,6 +724,62 @@ a {
 
     .footer-logo img {
         height: 60px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .menu-center {
+        gap: 3%;
+        padding-left: 180px;
+    }
+    
+    #searchbar {
+        max-width: 400px;
+    }
+    
+    .icons-right {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .menu-center {
+        gap: 2%;
+        padding-left: 160px;
+    }
+    
+    #searchbar {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #menu {
+        height: auto;
+        padding: 10px 2%;
+        flex-direction: column;
+    }
+    
+    #logo {
+        position: relative;
+        left: 0;
+        margin-bottom: 10px;
+    }
+    
+    .menu-center {
+        padding-left: 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #searchbar {
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .icons-right {
+        justify-content: center;
+        gap: 20px;
+        margin-top: 10px;
     }
 }
 
