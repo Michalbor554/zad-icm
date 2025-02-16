@@ -514,6 +514,8 @@ a {
         width: 100%;
         justify-content: center;
         margin-top: 10px;
+        position: relative;
+        z-index: 1000; /* Wyższy z-index dla ikon */
     }
 
     .icon1 {
@@ -530,17 +532,23 @@ a {
         width: 90%;
         height: auto;
         margin-top: 50px;
+        margin-bottom: 50px;
         padding: 15px;
+        position: relative;
+        font-size: 24px;
     }
 
     .opis {
-        font-size: 24px;
+        font-size: 18px;
+        margin-top: 20px;
+        line-height: 1.4;
     }
 
     /* Kategorie section */
     #kategorie {
         width: 100%;
         padding: 20px;
+        margin-top: 40px;
     }
 
     .opcja1, .opcja2 {
@@ -617,6 +625,44 @@ a {
 
     .left-space {
         display: none;
+    }
+    #content {
+        position: relative;
+        min-height: 400px; /* Minimalna wysokość dla kontenera */
+        margin-bottom: 40px; /* Dodatkowy margines na dole */
+    }
+
+    #content img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        background-color: #202020;
+        min-width: 200px;
+        z-index: 1001; /* Jeszcze wyższy z-index dla menu */
+    }
+
+    .icon2 .dropdown-menu,
+    .icon3 .dropdown-menu,
+    .icon4 .dropdown-menu {
+        right: 0;
+        left: auto;
+        top: 40px; /* Większy odstęp od ikony */
+    }
+
+    /* Poprawka na nakładanie się menu */
+    .icon1, .icon2, .icon3, .icon4 {
+        position: relative;
+        margin: 0 10px;
+    }
+    .napis {
+        font-size: 28px; /* Mniejszy rozmiar nagłówków na mobile */
+        margin-bottom: 30px;
     }
 }
 
