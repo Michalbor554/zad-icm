@@ -493,178 +493,85 @@ a {
 }
 /* Media queries dla urządzeń mobilnych */
 @media screen and (max-width: 768px) {
-    #menu {
+    /* Naprawienie szerokości strony */
+    #container, #kategorie, #firma, #bestseller {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Naprawienie sekcji z asortymentem */
+    #content {
+        width: 100%;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    .ramka {
+        width: 100%;
         height: auto;
-        flex-direction: column;
-        padding: 10px;
+        position: relative;
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 20px;
     }
 
-    .logoPng {
-        height: 80px;
+    .opis {
+        font-size: 16px;
+        margin-top: 15px;
     }
 
+    /* Poprawienie menu rozwijanego */
+    .dropdown-menu {
+        position: fixed;
+        right: 0;
+        left: auto;
+        top: auto;
+        width: 200px;
+        background-color: #202020;
+        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon2, .icon3, .icon4 {
+        position: static;
+    }
+
+    .menu-item {
+        padding: 15px 20px;
+        text-align: right;
+    }
+
+    /* Naprawienie paddingów sekcji */
+    #kategorie {
+        padding: 20px 15px;
+    }
+
+    #firma {
+        padding: 20px 15px;
+    }
+
+    /* Poprawienie układu kategorii */
+    .opcja1, .opcja2 {
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    /* Dodatkowe poprawki dla menu */
     .menu-center {
-        margin-left: 0;
-        flex-direction: column;
-        gap: 20px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    #searchbar {
         width: 100%;
     }
 
     .icons-right {
+        justify-content: space-around;
         width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-        position: relative;
-        z-index: 1000; /* Wyższy z-index dla ikon */
-    }
-
-    .icon1 {
-        margin-right: 0;
-    }
-
-    #searchbar {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    /* Content section */
-    .ramka {
-        width: 90%;
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        padding: 15px;
-        position: relative;
-        font-size: 24px;
-    }
-
-    .opis {
-        font-size: 18px;
-        margin-top: 20px;
-        line-height: 1.4;
-    }
-
-    /* Kategorie section */
-    #kategorie {
-        width: 100%;
-        padding: 20px;
-        margin-top: 40px;
-    }
-
-    .opcja1, .opcja2 {
-        float: none;
-        width: 80%;
-        margin: 20px auto;
-    }
-
-    /* Firma section */
-    #firma {
-        width: 100%;
-        height: auto;
-        padding: 20px 0;
-        background-attachment: fixed;
-    }
-
-    .rectangle {
-        float: none;
-        width: 85%;
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    .rectangle2 {
-        float: none;
-        width: 85%;
-        margin: 20px auto;
-    }
-
-    /* Bestseller section */
-    #bestseller {
-        width: 100%;
-    }
-
-    /* Footer section */
-    .footer-top {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-icons {
-        gap: 40px;
-    }
-
-    .right-section {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .email-input {
-        width: 90%;
-    }
-
-    .footer-bottom {
-        padding: 20px;
-    }
-
-    .bottom-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .left-space {
-        display: none;
-    }
-    #content {
-        position: relative;
-        min-height: 400px; /* Minimalna wysokość dla kontenera */
-        margin-bottom: 40px; /* Dodatkowy margines na dole */
-    }
-
-    #content img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-    
-
-    .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        background-color: #202020;
-        min-width: 200px;
-        z-index: 1001; /* Jeszcze wyższy z-index dla menu */
-    }
-
-    .icon2 .dropdown-menu,
-    .icon3 .dropdown-menu,
-    .icon4 .dropdown-menu {
-        right: 0;
-        left: auto;
-        top: 40px; /* Większy odstęp od ikony */
-    }
-
-    /* Poprawka na nakładanie się menu */
-    .icon1, .icon2, .icon3, .icon4 {
-        position: relative;
-        margin: 0 10px;
-    }
-    .napis {
-        font-size: 28px; /* Mniejszy rozmiar nagłówków na mobile */
-        margin-bottom: 30px;
     }
 }
+
 
 /* Media queries dla tabletów */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
