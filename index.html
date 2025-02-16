@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sklep muzyczny, ogromnym asortymentem">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/fontello.css" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    
+    <title>Sound - sklep muzyczny</title>
+</head>
+<body>
+    <div id="container">
+        <div id="menu">
+            <div id="logo">
+                <a href="index.html"><img src="img/logo.PNG" class="logoPng"></a>
+            </div>
+            <div class="menu-center">
+                <div class="icon1"><i class="icon-menu"></i>
+                    <div class="dropdown-menu">
+                        <a href="_blank" target="_blank"><div class="menu-item">Nowości</div></a>
+                        <a href="_blank" target="_blank"><div class="menu-item">Promocje</div></a>
+                        <a href="_blank" target="_blank"><div class="menu-item">Wyprzedaże</div></a>
+                        <a href="#kategorie"><div class="menu-item">Kategorie</div></a>
+                        <a href="#firma"><div class="menu-item">Kontakt</div></a>
+                    </div>
+                </div>
+                <div id="searchbar">
+                    <div class="icon5"><i class="icon-search-1"></i></div>
+                    <input type="text" placeholder="Szukaj">
+                </div>
+                <div class="icons-right">
+                    <div class="icon2"><i class="icon-heart"></i>
+                        <div class="dropdown-menu">
+                            <a href="_blank" target="_blank"><div class="menu-item">Ulubione produkty</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Zapisane na później</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Historia polubionych</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Wyczyść listę</div></a>
+                        </div>
+                    </div>
+                    <div class="icon3"><i class="icon-basket"></i>
+                        <div class="dropdown-menu">
+                            <a href="_blank" target="_blank"><div class="menu-item">Koszyk (0)</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Ostatnio dodane</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Zapisane koszyki</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Przejdź do kasy</div></a>
+                        </div>
+                    </div>
+                    <div class="icon4"><i class="icon-user"></i>
+                        <div class="dropdown-menu">
+                            <a href="_blank" target="_blank"><div class="menu-item">Zaloguj się</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Rejestracja</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Moje zamówienia</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Ustawienia konta</div></a>
+                            <a href="_blank" target="_blank"><div class="menu-item">Wyloguj</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <img src="img/john-matychuk-gUK3lA3K7Yo-unsplash.jpg">
+            <div class="ramka">Nasz Sklep Posiada Ogromny Asortyment.
+                <br/><br/><br/><br/>
+                <span class="opis">Szeroki wybór produktów najlepszych marek, dostępny w atrakcyjnych   cenach. 
+                Od instumentów muzycznych, sprzęt audio po różne akcesoria muzyczne i oprogramowania
+                </span>
+            </div>
+        </div>
+        <div id="kategorie">
+            <div class="napis">Kategorie</div>
+            <a href="_blank" target="_blank"><div class="opcja1">
+                <img src="img/kategorie/pngegg (2).png" style="width: 27px; height: auto;"/>
+                <p>Gitary elektryczne i basowe</p>
+            </div></a>
+            <a href="_blank" target="_blank"><div class="opcja1">
+                <img src="img/kategorie/pngegg (5).png" style="width: 70px; height: auto;"/>
+                <p>Instrumenty klawiszowe</p>
+            </div></a>
+            <a href="_blank" target="_blank"><div class="opcja1">
+                <img src="img/kategorie/pngegg (4).png" style="width: 70px; height: auto;"/>
+                <p>Instrumenty perkusyjne</p>
+            </div></a>
+            <div style="clear: both;"></div>
+            <a href="_blank" target="_blank"><div class="opcja1">
+                <img src="img/kategorie/pngegg (7).png" style="width: 70px; height: auto;"/>
+                <p>Akcesoria</p>
+            </div></a>
+            <a href="_blank" target="_blank"><div class="opcja1">
+                <img src="img/kategorie/pngegg (6).png" style="width: 70px; height: auto;"/>
+                <p>Sprzęt studyjny</p>
+            </div></a>
+            <a href="_blank" target="_blank"><div class="opcja1">
+                <img src="img/kategorie/pngegg (8).png" style="width: 70px; height: auto;"/>
+                <p>Urządzenia audio</p>
+            </div></a>
+            <div style="clear: both;"></div>
+            <a href="_blank" target="_blank"><div class="opcja2">
+                <img src="img/kategorie/pngegg (9).png" style="width: 70px; height: auto;"/>
+                <p>Instrumenty dęte</p>
+            </div></a>
+            <a href="_blank" target="_blank"><div class="opcja2">
+                <img src="img/kategorie/pngegg (10).png" style="width: 70px; height: auto;"/>
+                <p>Instrumenty smyczkowe</p>
+            </div></a>
+            <div style="clear: both;"></div>
+        </div>
+        <div id="firma">
+            
+            <div class="napis">O naszej Firmie</div>
+            <div class="rectangle">
+                <p><span>Sound - Twój zaufany partner w świecie dźwięku</span>
+                    <br/><br/>
+                    Firma <span>Sound</span> to nowo założony sklep specjalizujący się w sprzedaży sprzętu muzycznego, dostarczając produkty najwyższej jakości zarówno dla profesjonalistów, jak i amatorów. Nasza oferta obejmuje szeroki wybór instrumentów muzycznych, akcesoriów i sprzętu audio, które zadowolą nawet najbardziej wymagających klientów.
+                    <br/><br/>
+                    Naszym celem jest umożliwienie każdemu dostępu do najwyższej klasy sprzętu muzycznego, niezależnie od poziomu zaawansowania. Wierzymy, że muzyka łączy ludzi, inspiruje i pozwala wyrażać siebie, dlatego dokładamy wszelkich starań, aby nasza oferta była różnorodna i dostępna cenowo.
+                </p>
+            </div>
+            <div class="rectangle2">
+                <p><span>Chcesz się z nami skontaktować?</span></p>
+                <a href="https://mail.google.com/" target="_blank"><div class="tile">
+                    <i class="icon-mail"></i>
+                    E-mail
+                </div></a>
+                <a href="https://www.instagram.com/" target="_blank"><div class="tile">
+                    <i class="icon-instagram"></i>
+                    Instagram
+                </div></a>
+                <a href="https://www.facebook.com/" target="_blank"><div class="tile">
+                    <i class="icon-facebook"></i>
+                    Facebook
+                </div></a>
+                <div class="tile">
+                    <i class="icon-phone"></i>
+                    000 999 111
+                </div>
+                <br/>
+                <p><span style="font-size: 15px; font-style: italic; font-weight: 500;">Kontakt telefoniczny możliwy od pn-pt w godzinach 8.00-16.00</span></p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div id="bestseller">
+            <div id="product-carousel-root"></div>
+        </div>
+        <div id="footer">
+            <div class="footer-top">
+                <div class="left-section">
+                    <div class="nav-links">
+                        <a href="#firma" class="footer-link">O firmie</a>
+                        <a href="index.html" class="footer-link">Strona główna</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="icon-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i class="icon-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <input type="email" placeholder="Podaj adres e-mail" class="email-input">
+                    <div class="error-message"></div>
+                    <button class="register-btn">Zarejestruj się</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="bottom-content">
+                    <div class="left-space"></div>
+                    <div class="footer-logo">
+                        <img src="img/logo.PNG">
+                    </div>
+                    <div class="footer-links">
+                        <a href="_blank" target="_blank" class="policy-link">Polityka prywatności</a>
+                        <a href="_blank" target="_blank" class="policy-link">Zasady korzystania ze strony</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.icon1, .icon2, .icon3, .icon4').forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                // Zamknij wszystkie inne menu
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (!this.contains(menu)) {
+                        menu.classList.remove('show');
+                    }
+                });
+
+                // Przełącz menu dla klikniętej ikony
+                const dropdownMenu = this.querySelector('.dropdown-menu');
+                dropdownMenu.classList.toggle('show');
+                
+                e.stopPropagation();
+            });
+        });
+
+        // Zamykanie menu po kliknięciu poza nim
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.icon1, .icon2, .icon3, .icon4')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.querySelector('.email-input');
+            const registerBtn = document.querySelector('.register-btn');
+            const errorMessage = document.querySelector('.error-message');
+
+            // Funkcja do sprawdzania poprawności emaila
+            function isValidEmail(email) {
+                return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+            }
+
+            // Funkcja pokazująca alert
+            function showAlert(message) {
+                // Tworzenie elementu alertu
+                const alert = document.createElement('div');
+                alert.className = 'alert';
+                alert.textContent = message;
+                document.body.appendChild(alert);
+
+                // Pokazanie alertu
+                alert.style.display = 'block';
+
+                // Usunięcie alertu po 3 sekundach
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                    alert.remove();
+                }, 3000);
+            }
+
+            // Funkcja do obsługi rejestracji
+            function handleRegistration() {
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    errorMessage.textContent = 'Proszę podać adres e-mail';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    errorMessage.textContent = 'Proszę podać prawidłowy adres e-mail';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                // Jeśli email jest poprawny
+                errorMessage.style.display = 'none';
+                showAlert('Dziękujemy za rejestrację! Na podany adres e-mail został wysłany link aktywacyjny.');
+                emailInput.value = ''; // Czyszczenie pola input
+            }
+
+            // Obsługa kliknięcia przycisku
+            registerBtn.addEventListener('click', handleRegistration);
+
+            // Obsługa wciśnięcia Enter w polu input
+            emailInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    handleRegistration();
+                }
+            });
+
+            // Usuwanie komunikatu o błędzie gdy użytkownik zaczyna pisać
+            emailInput.addEventListener('input', function() {
+                errorMessage.style.display = 'none';
+            });
+        });
+    </script>
+    <script type="text/babel" src="carousel.js"></script>
+    <script type="text/babel">
+        // Montowanie komponentu
+        const root = ReactDOM.createRoot(document.getElementById('product-carousel-root'));
+        root.render(<ProductCarousel />);
+    </script>
+</body>
+</html>
