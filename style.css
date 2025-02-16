@@ -1,8 +1,10 @@
 * {
     box-sizing: border-box;
+    
 }
 body
 {
+    width: 100%;
     background-color: #131313;
     color: #d4d3bd;
     font-family: "Montserrat", sans-serif;
@@ -12,6 +14,8 @@ body
 }
 html
 {
+    width: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 a {
@@ -491,118 +495,223 @@ a {
 .left-space {
     width: 410px; /* To balance the layout */
 }
-/* Media queries dla urządzeń mobilnych */
-@media screen and (max-width: 768px) {
-    /* Naprawienie szerokości strony */
-    #container, #kategorie, #firma, #bestseller {
-        width: 100vw;
+@media screen and (max-width: 390px) {
+    /* Podstawowa struktura */
+    body, html {
+        width: 100%;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
     }
 
-    /* Naprawienie sekcji z asortymentem */
+    /* Górne menu */
+    #menu {
+        height: auto;
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-center {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logoPng {
+        height: 40px;
+    }
+    #logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+
+    #searchbar {
+        width: 95%;
+        height: 35px;
+        margin: 5px auto;
+    }
+    #searchbar input {
+        width: calc(100% - 40px);
+        font-size: 16px;
+    }
+
+    .icons-right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        margin-left: 20px;
+    }
+    .icon1, .icon2, .icon3, .icon4 {
+        font-size: 16px; /* Zmniejszone ikony */
+    }
+    .icon1 {
+        margin-left: auto; /* Przesuwa ikonę w prawo */
+        margin-right: 20px; /* Dodaje odstęp od prawej krawędzi */
+    }
+    .icon5 {
+        font-size: 16px;
+    }
+
+    /* Sekcja główna z asortmentem */
     #content {
         width: 100%;
-        padding: 0 15px;
-        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+    #content img {
+        width: 100%;
+        height: auto;
     }
 
     .ramka {
-        width: 100%;
-        height: auto;
+        width: 85%;
         position: relative;
+        min-height: auto;
         margin: 20px auto;
         padding: 15px;
-        font-size: 20px;
+        font-size: 18px;
+        text-align: center;
+        background-color: rgba(217, 217, 217, 0.30);
+        box-sizing: border-box;
+        word-wrap: break-word;
     }
 
     .opis {
         font-size: 16px;
-        margin-top: 15px;
+        line-height: 1.4;
+        margin-top: 10px;
+        text-align: center;
+        word-wrap: break-word;
     }
 
-    /* Poprawienie menu rozwijanego */
+    /* Kategorie */
+    #kategorie {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .napis {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .opcja1, .opcja2 {
+        float: none;
+        width: 85%;
+        height: 70px;
+        margin: 15px auto;
+        border-radius: 8px;
+    }
+
+    /* O firmie */
+    #firma {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .rectangle {
+        float: none;
+        width: 85%;
+        margin: 15px auto;
+        padding: 15px;
+        height: auto;
+    }
+
+    .rectangle2 {
+        float: none;
+        width: 85%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .tile {
+        width: 85%;
+        margin: 10px auto;
+        padding: 10px;
+        justify-content: center;
+    }
+    #bestseller {
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+    }
+
+    .product-carousel {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Poprawka dla menu rozwijanego */
     .dropdown-menu {
         position: fixed;
         right: 0;
         left: auto;
         top: auto;
         width: 200px;
-        background-color: #202020;
-        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .icon2, .icon3, .icon4 {
-        position: static;
+    .icon2 .dropdown-menu,
+    .icon3 .dropdown-menu,
+    .icon4 .dropdown-menu {
+        right: 0;
+        left: auto;
     }
 
-    .menu-item {
-        padding: 15px 20px;
-        text-align: right;
-    }
-
-    /* Naprawienie paddingów sekcji */
-    #kategorie {
-        padding: 20px 15px;
-    }
-
-    #firma {
-        padding: 20px 15px;
-    }
-
-    /* Poprawienie układu kategorii */
-    .opcja1, .opcja2 {
+    /* Footer */
+    #footer {
         width: 100%;
-        margin: 15px auto;
+        padding: 20px 0;
     }
 
-    /* Dodatkowe poprawki dla menu */
-    .menu-center {
-        width: 100%;
-        padding: 0 15px;
+    .footer-top {
+        flex-direction: column;
+        padding: 15px;
     }
 
-    #searchbar {
-        width: 100%;
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
-    .icons-right {
-        justify-content: space-around;
-        width: 100%;
+    .social-icons {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .email-input {
+        width: 85%;
+    }
+
+    .footer-bottom .bottom-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-logo img {
+        height: 60px;
     }
 }
 
 
-/* Media queries dla tabletów */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .menu-center {
-        margin-left: 50px;
-        gap: 40px;
-    }
 
-    #searchbar {
-        width: 300px;
-    }
 
-    #kategorie, #firma, #bestseller {
-        width: 100%;
-    }
-
-    .opcja1 {
-        margin-left: 5%;
-    }
-
-    .opcja2 {
-        margin-left: 5%;
-    }
-
-    .rectangle {
-        margin-left: 5%;
-        width: 40%;
-    }
-
-    .rectangle2 {
-        margin-right: 5%;
-        width: 40%;
-    }
-}
