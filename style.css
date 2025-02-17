@@ -58,7 +58,7 @@ a {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 200px; /* Przestrzeń dla logo */
+    padding-left: 200px; 
     gap: 5%;
 }
 .icons-right
@@ -274,7 +274,7 @@ a {
 #firma
 {
     width: 1440px;
-    height: 800px; /* Ustaw odpowiednią wysokość */
+    height: 800px; 
     margin-left: auto;
     margin-right: auto;
     background-image: url('img/6972720_23780.jpg');
@@ -508,10 +508,10 @@ a {
 }
 
 .left-space {
-    width: 410px; /* To balance the layout */
+    width: 410px; 
 }
 @media screen and (max-width: 390px) {
-    /* Podstawowa struktura */
+
     body, html {
         width: 100%;
         margin: 0;
@@ -519,43 +519,164 @@ a {
         overflow-x: hidden;
     }
 
-    /* Górne menu */
+
     #menu {
         height: auto;
-        padding: 10px 5px;
-        display: flex;
+        padding: 0;
         flex-direction: column;
-        align-items: center;
+        position: relative;
     }
 
     .menu-center {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        display: none;
     }
 
     .logoPng {
-        height: 40px;
+        height: 50px;
+        width: auto;
     }
     #logo {
         width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
+        position: static;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        background-color: #202020;
+        z-index: 2;
+    }
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #202020;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        border-top: 1px solid #333;
     }
 
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #d4d3bd;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    .mobile-nav-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+    .mobile-nav-item.active {
+        color: #ffffff;
+    }
+    .mobile-dropdown {
+        position: fixed;
+        bottom: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #202020;
+        padding: 15px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+    #menu-dropdown a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .mobile-dropdown.show {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-item {
+        padding: 12px 20px;
+        color: #d4d3bd;
+        border-bottom: 1px solid #333;
+        font-size: 14px;
+    }
+
+    .mobile-menu-item:last-child {
+        border-bottom: none;
+    }
+    .mobile-menu-item:active {
+        background-color: #333;
+    }
+
+    .mobile-search-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #202020;
+        padding: 10px 15px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1001;
+        display: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-search-wrapper.show {
+        transform: translateY(0);
+        display: flex;
+    }
+
+    .mobile-search-form {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .mobile-search-input {
+        flex-grow: 1;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 20px;
+        background-color: #d4d3bd;
+        color: #202020;
+        font-size: 16px;
+    }
+
+    .mobile-search-input::placeholder {
+        color: #666;
+    }
+
+    .mobile-search-close {
+        background: none;
+        border: none;
+        color: #d4d3bd;
+        font-size: 20px;
+        padding: 5px;
+        cursor: pointer;
+    }
 
     #searchbar {
-        width: 95%;
-        height: 35px;
-        margin: 5px auto;
+        position: fixed;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        z-index: 1;
+        margin: 0;
+        display: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     #searchbar input {
         width: calc(100% - 40px);
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .icons-right {
@@ -566,17 +687,17 @@ a {
         margin-left: 20px;
     }
     .icon1, .icon2, .icon3, .icon4 {
-        font-size: 16px; /* Zmniejszone ikony */
+        font-size: 16px;
     }
     .icon1 {
-        margin-left: auto; /* Przesuwa ikonę w prawo */
-        margin-right: 20px; /* Dodaje odstęp od prawej krawędzi */
+        margin-left: auto; 
+        margin-right: 20px; 
     }
     .icon5 {
         font-size: 16px;
     }
 
-    /* Sekcja główna z asortmentem */
+ 
     #content {
         width: 100%;
         display: flex;
@@ -610,7 +731,7 @@ a {
         word-wrap: break-word;
     }
 
-    /* Kategorie */
+
     #kategorie {
         width: 100%;
         padding: 20px 0;
@@ -629,7 +750,7 @@ a {
         border-radius: 8px;
     }
 
-    /* O firmie */
+  
     #firma {
         width: 100%;
         height: auto;
@@ -649,6 +770,44 @@ a {
         width: 85%;
         margin: 15px auto;
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .rectangle2 .tile {
+        width: 175px; 
+        height: 45px;
+        margin: 10px 0;
+        background-color: #473b35;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .rectangle2 .tile i {
+        margin-right: 10px;
+        font-size: 18px;
+        min-width: 20px;
+        text-align: center;
+    }
+    .rectangle2 > p {
+        width: 100%;
+        text-align: center;
+    }
+    .rectangle2 .tile span {
+        flex: 1;
+        text-align: left;
+    }
+
+    .rectangle2 a {
+        text-decoration: none;
+        color: #d4d3bd;
+        display: block;
     }
 
     .tile {
@@ -668,7 +827,7 @@ a {
         padding: 0 15px;
     }
 
-    /* Poprawka dla menu rozwijanego */
+   
     .dropdown-menu {
         position: fixed;
         right: 0;
@@ -684,7 +843,7 @@ a {
         left: auto;
     }
 
-    /* Footer */
+
     #footer {
         width: 100%;
         padding: 20px 0;

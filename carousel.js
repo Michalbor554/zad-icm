@@ -140,6 +140,6 @@ const ProductCarousel = () => {
   );
 };
 
-// Montowanie komponentu
+
 const root = ReactDOM.createRoot(document.getElementById('product-carousel-root'));
 root.render(React.createElement(ProductCarousel));

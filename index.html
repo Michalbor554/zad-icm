@@ -187,14 +187,14 @@
     <script>
         document.querySelectorAll('.icon1, .icon2, .icon3, .icon4').forEach(icon => {
             icon.addEventListener('click', function(e) {
-                // Zamknij wszystkie inne menu
+                
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
                     if (!this.contains(menu)) {
                         menu.classList.remove('show');
                     }
                 });
 
-                // Przełącz menu dla klikniętej ikony
+                
                 const dropdownMenu = this.querySelector('.dropdown-menu');
                 dropdownMenu.classList.toggle('show');
                 
@@ -202,7 +202,7 @@
             });
         });
 
-        // Zamykanie menu po kliknięciu poza nim
+        
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.icon1, .icon2, .icon3, .icon4')) {
                 document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
@@ -216,30 +216,30 @@
             const registerBtn = document.querySelector('.register-btn');
             const errorMessage = document.querySelector('.error-message');
 
-            // Funkcja do sprawdzania poprawności emaila
+            
             function isValidEmail(email) {
                 return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
             }
 
-            // Funkcja pokazująca alert
+            
             function showAlert(message) {
-                // Tworzenie elementu alertu
+                
                 const alert = document.createElement('div');
                 alert.className = 'alert';
                 alert.textContent = message;
                 document.body.appendChild(alert);
 
-                // Pokazanie alertu
+                
                 alert.style.display = 'block';
 
-                // Usunięcie alertu po 3 sekundach
+                
                 setTimeout(() => {
                     alert.style.display = 'none';
                     alert.remove();
                 }, 3000);
             }
 
-            // Funkcja do obsługi rejestracji
+            
             function handleRegistration() {
                 const email = emailInput.value.trim();
                 
@@ -255,23 +255,23 @@
                     return;
                 }
 
-                // Jeśli email jest poprawny
+                
                 errorMessage.style.display = 'none';
                 showAlert('Dziękujemy za rejestrację! Na podany adres e-mail został wysłany link aktywacyjny.');
-                emailInput.value = ''; // Czyszczenie pola input
+                emailInput.value = ''; 
             }
 
-            // Obsługa kliknięcia przycisku
+            
             registerBtn.addEventListener('click', handleRegistration);
 
-            // Obsługa wciśnięcia Enter w polu input
+            
             emailInput.addEventListener('keyup', function(event) {
                 if (event.key === 'Enter') {
                     handleRegistration();
                 }
             });
 
-            // Usuwanie komunikatu o błędzie gdy użytkownik zaczyna pisać
+            
             emailInput.addEventListener('input', function() {
                 errorMessage.style.display = 'none';
             });
@@ -279,9 +279,195 @@
     </script>
     <script type="text/babel" src="carousel.js"></script>
     <script type="text/babel">
-        // Montowanie komponentu
+        
         const root = ReactDOM.createRoot(document.getElementById('product-carousel-root'));
         root.render(<ProductCarousel />);
+    </script>
+    <nav class="mobile-nav">
+        <a href="#" class="mobile-nav-item" id="mobile-menu-trigger">
+            <i class="icon-menu"></i>
+            <span>Menu</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobile-search-trigger">
+            <i class="icon-search-1"></i>
+            <span>Szukaj</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobile-favorites-trigger">
+            <i class="icon-heart"></i>
+            <span>Ulubione</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobile-cart-trigger">
+            <i class="icon-basket"></i>
+            <span>Koszyk</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobile-account-trigger">
+            <i class="icon-user"></i>
+            <span>Konto</span>
+        </a>
+    </nav>
+    
+    <div class="mobile-dropdown" id="menu-dropdown">
+        <a href="_blank" target="_blank"><div class="mobile-menu-item">Nowości</div></a>
+        <a href="_blank" target="_blank"><div class="mobile-menu-item">Promocje</div></a>
+        <a href="_blank" target="_blank"><div class="mobile-menu-item">Wyprzedaże</div></a>
+        <a href="#kategorie"><div class="mobile-menu-item">Kategorie</div></a>
+        <a href="#firma"><div class="mobile-menu-item">Kontakt</div></a>
+    </div>
+    </div>
+    <div class="mobile-dropdown" id="favorites-dropdown">
+        <div class="mobile-menu-item">Ulubione produkty</div>
+        <div class="mobile-menu-item">Zapisane na później</div>
+        <div class="mobile-menu-item">Historia polubionych</div>
+        <div class="mobile-menu-item">Wyczyść listę</div>
+    </div>
+    
+    <div class="mobile-dropdown" id="cart-dropdown">
+        <div class="mobile-menu-item">Koszyk (0)</div>
+        <div class="mobile-menu-item">Ostatnio dodane</div>
+        <div class="mobile-menu-item">Zapisane koszyki</div>
+        <div class="mobile-menu-item">Przejdź do kasy</div>
+    </div>
+    
+    <div class="mobile-dropdown" id="account-dropdown">
+        <div class="mobile-menu-item">Zaloguj się</div>
+        <div class="mobile-menu-item">Rejestracja</div>
+        <div class="mobile-menu-item">Moje zamówienia</div>
+        <div class="mobile-menu-item">Ustawienia konta</div>
+        <div class="mobile-menu-item">Wyloguj</div>
+    </div>
+
+    <div class="mobile-search-wrapper">
+        <form class="mobile-search-form" onsubmit="return false;">
+            <input type="text" class="mobile-search-input" placeholder="Wyszukaj produkt...">
+            <button type="button" class="mobile-search-close">×</button>
+        </form>
+    </div>
+    
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const triggers = {
+                menu: document.getElementById('mobile-menu-trigger'),
+                search: document.getElementById('mobile-search-trigger'),
+                favorites: document.getElementById('mobile-favorites-trigger'),
+                cart: document.getElementById('mobile-cart-trigger'),
+                account: document.getElementById('mobile-account-trigger')
+            };
+            
+            const dropdowns = {
+                menu: document.getElementById('menu-dropdown'),
+                favorites: document.getElementById('favorites-dropdown'),
+                cart: document.getElementById('cart-dropdown'),
+                account: document.getElementById('account-dropdown')
+            };
+            
+            const searchbar = document.getElementById('searchbar');
+        
+            
+            function closeAllDropdowns() {
+                Object.values(dropdowns).forEach(dropdown => {
+                    if (dropdown) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+                if (searchbar) {
+                    searchbar.style.display = 'none';
+                }
+            }
+        
+            
+            function handleDropdownToggle(dropdownElement, trigger) {
+                return function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isCurrentlyShown = dropdownElement.classList.contains('show');
+                    
+                    
+                    closeAllDropdowns();
+                    
+                    
+                    if (!isCurrentlyShown) {
+                        dropdownElement.classList.add('show');
+                        trigger.classList.add('active');
+                    }
+                };
+            }
+        
+            
+            if (triggers.menu && dropdowns.menu) {
+                triggers.menu.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    
+                    closeAllDropdowns();
+                    
+                   
+                    dropdowns.menu.classList.toggle('show');
+                    triggers.menu.classList.toggle('active');
+                });
+            }
+            
+            if (triggers.favorites && dropdowns.favorites) {
+                triggers.favorites.addEventListener('click', handleDropdownToggle(dropdowns.favorites, triggers.favorites));
+            }
+            
+            if (triggers.cart && dropdowns.cart) {
+                triggers.cart.addEventListener('click', handleDropdownToggle(dropdowns.cart, triggers.cart));
+            }
+            
+            if (triggers.account && dropdowns.account) {
+                triggers.account.addEventListener('click', handleDropdownToggle(dropdowns.account, triggers.account));
+            }
+        
+            
+            const searchWrapper = document.querySelector('.mobile-search-wrapper');
+            const searchInput = document.querySelector('.mobile-search-input');
+            const searchCloseBtn = document.querySelector('.mobile-search-close');
+        
+            if (triggers.search && searchWrapper) {
+                triggers.search.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeAllDropdowns();
+                    searchWrapper.classList.add('show');
+                    searchInput.focus(); 
+                    triggers.search.classList.add('active');
+                });
+        
+                
+                searchCloseBtn.addEventListener('click', function() {
+                    searchWrapper.classList.remove('show');
+                    triggers.search.classList.remove('active');
+                    searchInput.value = ''; 
+                });
+        
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        
+                        console.log('Szukana fraza:', this.value);
+                        searchWrapper.classList.remove('show');
+                        triggers.search.classList.remove('active');
+                    }
+                });
+            }
+        
+            
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.mobile-nav') && !e.target.closest('.mobile-dropdown')) {
+                    closeAllDropdowns();
+                    
+                    Object.values(triggers).forEach(trigger => {
+                        if (trigger) {
+                            trigger.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
